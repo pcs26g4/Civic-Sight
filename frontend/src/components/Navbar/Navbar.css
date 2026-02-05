@@ -1,0 +1,446 @@
+/* =====================
+   MODERN NAVBAR
+===================== */
+.navbar {
+  height: 70px;
+  background: linear-gradient(135deg, rgba(7, 89, 133, 0.85), rgba(12, 74, 110, 0.85));
+  position: sticky;
+  top: 0;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  font-family: "Inter", system-ui, sans-serif;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 4px 20px rgba(7, 89, 133, 0.2);
+  z-index: 1000;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: slideDown 0.5s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.navbar:hover {
+  box-shadow: 0 8px 32px rgba(7, 89, 133, 0.35);
+  background: linear-gradient(135deg, rgba(7, 89, 133, 0.95), rgba(12, 74, 110, 0.95));
+}
+
+/* LEFT SIDE */
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.logo {
+  width: 56px;
+  height: 48px;
+  background: rgba(255, 255, 255, 0.95);
+  color: #075985;
+  font-weight: 900;
+  font-size: 17px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(255, 255, 255, 0.25);
+  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.logo::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(14, 165, 233, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.logo:hover::before {
+  width: 200px;
+  height: 200px;
+}
+
+.logo:hover {
+  transform: translateY(-4px) scale(1.08) rotate(5deg);
+  box-shadow: 0 8px 24px rgba(255, 255, 255, 0.4);
+  background: #ffffff;
+}
+
+.logo:active {
+  transform: translateY(-2px) scale(1.02);
+}
+
+.brand-text {
+  font-size: 17px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.025em;
+  transition: all 0.3s ease;
+  cursor: default;
+}
+
+.brand-text:hover {
+  letter-spacing: 0.5px;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+/* DESKTOP NAV LINKS - SIMPLIFIED */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav-right a {
+  font-size: 14px;
+  font-weight: 600;
+  color: #ffffff;
+  padding: 10px 18px;
+  text-decoration: none;
+  border-radius: 8px;
+  background: transparent;
+  border: none;
+  transition: all 0.3s ease;
+  position: relative;
+  opacity: 0.9;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Remove focus outline for all elements */
+.nav-right a:focus,
+.nav-right a:active {
+  outline: none;
+  box-shadow: none;
+}
+
+
+
+/* Remove the active state styling */
+.nav-right a.active {
+  background: transparent;
+  color: #ffffff;
+  opacity: 1;
+  font-weight: 600;
+}
+
+/* LOGOUT BUTTON */
+.logout-btn {
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+  border: none;
+  color: white;
+  padding: 10px 22px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+  margin-left: 16px;
+  position: relative;
+  overflow: hidden;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.logout-btn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.logout-btn:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.logout-btn:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 24px rgba(239, 68, 68, 0.5);
+  background: linear-gradient(135deg, #dc2626, #b91c1c);
+  
+}
+
+.logout-btn:active {
+  transform: translateY(-1px) scale(1.02);
+}
+
+/* HAMBURGER ICON */
+.hamburger {
+  display: none;
+  font-size: 26px;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1.5px solid rgba(255, 255, 255, 0.25);
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  color: #ffffff;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  font-weight: bold;
+  position: relative;
+  overflow: hidden;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.hamburger::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.hamburger:hover::before {
+  width: 200px;
+  height: 200px;
+}
+
+.hamburger:hover {
+  background: rgba(255, 255, 255, 0.95);
+  color: #075985;
+  transform: scale(1.1) rotate(90deg);
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.3);
+}
+
+.hamburger:active {
+  transform: scale(1.05) rotate(90deg);
+}
+
+@media (max-width: 768px) {
+  .hamburger:hover,
+  .hamburger:active {
+    transform: scale(1.05) !important;
+  }
+}
+
+/* =========================================================
+   MOBILE ONLY (<= 768px)
+========================================================= */
+@media (max-width: 768px) {
+  .navbar {
+    height: 64px;
+    padding: 0 20px;
+  }
+
+  .brand-text {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-right {
+    position: fixed;
+    top: 64px;
+    right: -100%;
+    width: 280px;
+    height: calc(100vh - 64px);
+    background: linear-gradient(135deg, rgba(7, 89, 133, 0.98), rgba(12, 74, 110, 0.98));
+    flex-direction: column;
+    gap: 0;
+    padding: 20px 0;
+    transition: right 0.3s ease;
+    overflow-y: auto;
+    z-index: 999;
+    box-shadow: -8px 0 32px rgba(7, 89, 133, 0.3);
+    border-left: 1px solid rgba(255, 255, 255, 0.15);
+  }
+
+  .nav-right.open {
+    right: 0;
+  }
+
+  .nav-right a {
+    width: calc(100% - 40px);
+    margin: 0 20px;
+    padding: 16px 20px;
+    border-radius: 10px;
+    font-size: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    margin-bottom: 10px;
+    color: #ffffff;
+    text-align: center;
+    outline: none;
+  }
+
+  .nav-right a:focus,
+  .nav-right a:active {
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: none;
+  }
+
+  .nav-right a:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+
+  /* Remove active state styling for mobile too */
+  .nav-right a.active {
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+  }
+
+  .logout-btn {
+    margin: 20px 20px 0 20px;
+    width: calc(100% - 40px);
+    padding: 16px;
+  }
+}
+
+/* =========================================================
+   TABLET (769px – 1024px)
+========================================================= */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .navbar {
+    padding: 0 24px;
+  }
+
+  .nav-left {
+    gap: 16px;
+  }
+
+  .brand-text {
+    font-size: 16px;
+  }
+
+  .nav-right {
+    gap: 6px;
+  }
+
+  .nav-right a {
+    padding: 8px 12px;
+    font-size: 13px;
+  }
+
+  .logout-btn {
+    padding: 8px 16px;
+    font-size: 13px;
+  }
+}
+
+/* =========================================================
+   EXTRA SMALL DEVICES (<400px)
+========================================================= */
+@media (max-width: 400px) {
+  .navbar {
+    padding: 0 16px;
+    height: 60px;
+  }
+
+  .logo {
+    width: 40px;
+    height: 36px;
+    font-size: 14px;
+  }
+
+  .hamburger {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+  }
+
+  .nav-right {
+    top: 60px;
+    height: calc(100vh - 60px);
+    width: 260px;
+  }
+}
+
+/* 🔒 HARD STOP ALL HOVER EFFECTS ON LOGO */
+.logo,
+.logo * {
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  filter: none !important;
+  transform: none !important;
+  transition: none !important;
+}
+
+/* Hover state – still NOTHING */
+.logo:hover,
+.logo:hover *,
+.logo:active,
+.logo:focus {
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  filter: none !important;
+  transform: none !important;
+}
+
+/* Kill pseudo elements if any */
+.logo::before,
+.logo::after,
+.logo *::before,
+.logo *::after {
+  content: none !important;
+  display: none !important;
+}
+
+/* =========================================================
+   REMOVE FOCUS OUTLINE GLOBALLY
+========================================================= */
+*:focus {
+  outline: none !important;
+}
+
+a:focus,
+button:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Remove active/focus states that create boxes */
+.nav-right a:focus-visible,
+.logout-btn:focus-visible,
+.hamburger:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Remove tap highlight on mobile */
+@media (max-width: 768px) {
+  .nav-right a,
+  .logout-btn,
+  .hamburger {
+    -webkit-tap-highlight-color: transparent;
+    tap-highlight-color: transparent;
+  }
+}

@@ -1,0 +1,12 @@
+.app-layout {
+  height: 100vh;
+  background: rgba(15, 23, 42, 0.95);
+  backdrop-filter: blur(20px);
+}
+
+.app-content {
+  height: calc(100vh - 72px);
+  position: relative;
+  background: rgba(15, 23, 42, 0.8);
+  overflow-y: auto;
+}

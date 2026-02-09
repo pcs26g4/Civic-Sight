@@ -675,7 +675,7 @@ export default function HomePage() {
               <option value="all">All Time</option>
               <option value="7days">Last 7 Days</option>
               <option value="30days">Last 30 Days</option>
-              <option value="custom">Custom Date</option>
+              <option value="custom">Specific Date</option>
             </select>
 
             {filters.dateRange === "custom" && (

@@ -289,7 +289,7 @@ export default function HomePage() {
 
   const [filters, setFilters] = useState({
     dateRange: "all",
-    customDate: "",
+    SpecificDate: "",
     status: "all",
     priority: "all",
     sortBy: "newest",
@@ -323,10 +323,10 @@ export default function HomePage() {
       const last30 = new Date();
       last30.setDate(currentDate.getDate() - 30);
       filtered = filtered.filter((t) => new Date(t.created_at) >= last30);
-    } else if (activeFilters.customDate) {
+    } else if (activeFilters.SpecificDate) {
       filtered = filtered.filter(
         (t) =>
-          t.created_at && t.created_at.startsWith(activeFilters.customDate),
+          t.created_at && t.created_at.startsWith(activeFilters.SpecificDate),
       );
     }
 
@@ -453,9 +453,9 @@ export default function HomePage() {
     const newFilters = { ...filters, [field]: value };
 
     if (field === "dateRange" && value !== "custom") {
-      newFilters.customDate = "";
+      newFilters.SpecificDate = "";
     }
-    if (field === "customDate") {
+    if (field === "SpecificDate") {
       newFilters.dateRange = "custom";
     }
 
@@ -681,9 +681,9 @@ export default function HomePage() {
             {filters.dateRange === "custom" && (
               <input
                 type="date"
-                value={filters.customDate}
+                value={filters.SpecificDate}
                 onChange={(e) =>
-                  handleFilterChange("customDate", e.target.value)
+                  handleFilterChange("SpecificDate", e.target.value)
                 }
               />
             )}
